@@ -10,5 +10,4 @@ public class OutOfTheBoxApplication {
 		SpringApplication.run(OutOfTheBoxApplication.class, args);
 		System.out.println("AKU COBA NGE PUSH");
 	}
-
 }
