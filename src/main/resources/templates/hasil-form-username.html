@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Out of The Box Quiz</title>
+    <link rel="stylesheet" th:href="@{style.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 th:text="'Welcome, ' + ${user.nama}"></h1>
+      <div class="button-container">
+        <a href="/form-donasi" class="button1">Mulai Quiz!</a>
+        <a href="/leaderboard" class="button1">Lihat leaderboard</a>
+      </div>
+    </div>
+  </body>
+</html>
