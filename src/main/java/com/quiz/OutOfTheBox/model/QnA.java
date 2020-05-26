@@ -19,8 +19,7 @@ public class QnA {
 
     public void readFileQuestion() {
         try {
-            br = new BufferedReader(new FileReader(
-                    "D:/Visual Studio/JAVA/OutOfTheBox/src/main/java/com/quiz/OutOfTheBox/model/question.txt"));
+            br = new BufferedReader(new FileReader("src/main/java/com/quiz/OutOfTheBox/model/question.txt"));
             String txt = br.readLine();
 
             while (txt != null) {
@@ -36,9 +35,9 @@ public class QnA {
     }
 
     public void readFileAnswer() {
+
         try {
-            br = new BufferedReader(new FileReader(
-                    "D:/Visual Studio/JAVA/OutOfTheBox/src/main/java/com/quiz/OutOfTheBox/model/answer.txt"));
+            br = new BufferedReader(new FileReader("src/main/java/com/quiz/OutOfTheBox/model/answer.txt"));
             String txt = br.readLine();
 
             while (txt != null) {
