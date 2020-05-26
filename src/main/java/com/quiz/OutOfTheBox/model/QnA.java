@@ -9,6 +9,11 @@ public class QnA {
     private ArrayList<String> listQuestion = new ArrayList<String>();
     private ArrayList<String> listAnswer = new ArrayList<String>();
 
+    public QnA() {
+        readFileQuestion();
+        readFileAnswer();
+    }
+
     public ArrayList<String> getListAnswer() {
         return listAnswer;
     }
@@ -26,8 +31,6 @@ public class QnA {
                 listQuestion.add(txt);
                 txt = br.readLine();
             }
-
-            System.out.println(listQuestion);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,8 +47,6 @@ public class QnA {
                 listAnswer.add(txt);
                 txt = br.readLine();
             }
-
-            System.out.println(listAnswer);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,11 +78,5 @@ public class QnA {
     // public void printzz(){
     // String str = "HelloWorld";
     // }
-
-    public static void main(String[] args) {
-        QnA qna = new QnA();
-        qna.readFileQuestion();
-        qna.readFileAnswer();
-    }
 
 }

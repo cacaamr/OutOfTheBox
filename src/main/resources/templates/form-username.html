@@ -10,11 +10,11 @@
       <h1>Input your Username!</h1>
       <form
         action="#"
-        th:action="@{/form-donasi}"
-        th:object="${user}"
+        th:action="@{/hasil-form-username}"
+        th:object="${pemain}"
         method="post"
       >
-        <div class="field">Nama: <input type="text" th:field="*{nama}" /></div>
+        <div class="field">Nama: <input type="text" required th:field="*{nama}" /></div>
         <div class="button-container">
           <input type="submit" value="Submit" />
         </div>
