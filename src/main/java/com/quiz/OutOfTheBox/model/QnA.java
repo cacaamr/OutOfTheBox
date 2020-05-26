@@ -1,4 +1,4 @@
-package com.quiz.OutOfTheBox;
+package com.quiz.OutOfTheBox.model;
 
 import java.io.*;
 import java.util.*;
@@ -20,7 +20,7 @@ public class QnA {
 
     public void readFileQuestion(){
         try{
-            br = new BufferedReader(new FileReader("question.txt"));
+            br = new BufferedReader(new FileReader("E:\\Nadin\\KULIAH SEMESTER 2\\DDP2\\PROYEK AKHIR\\OutOfTheBox\\src\\main\\java\\com\\quiz\\OutOfTheBox\\model\\question.txt"));
             String txt = br.readLine();
     
             while(txt != null){
@@ -37,7 +37,7 @@ public class QnA {
 
     public void readFileAnswer(){
         try{
-            br = new BufferedReader(new FileReader("answer.txt"));
+            br = new BufferedReader(new FileReader("E:\\Nadin\\KULIAH SEMESTER 2\\DDP2\\PROYEK AKHIR\\OutOfTheBox\\src\\main\\java\\com\\quiz\\OutOfTheBox\\model\\answer.txt"));
             String txt = br.readLine();
     
             while(txt != null){
@@ -53,38 +53,12 @@ public class QnA {
     }
 
 
-
-    // public void listQnA() throws IOException{
-    //     // try{
-    //         BufferedReader br = new BufferedReader(new FileReader("E:\\qna.txt"));
-    //         String txt = br.readLine();
-    //         ArrayList<String> listQuestion = new ArrayList<String>();
-    //         ArrayList<String> listAnswer = new ArrayList<String>();
-    //         // ArrayList<String> listQna= new ArrayList<String>();
-    
-    //         while(txt != null){
-    //             String [] listQna = txt.split("//");
-    //             listQuestion.add(listQna[0]);
-    //             listAnswer.add(listQna[1]);
-    //             System.out.println(listQna);
-    //             txt = br.readLine();
-    //         }
-    //     // }catch(IOException e){
-    //     //     e.printStackTrace();
-    //     // }catch(FileNotFoundException e){
-    //     //     e.printStackTrace();
-    //     // }
-    // }
-
-    // public void printzz(){
-    //     String str = "HelloWorld";
-    // }
-
-
     public static void main(String[] args) {
         QnA qna = new QnA();
         qna.readFileQuestion(); 
+        System.out.println(qna.getListQuestion()); 
         qna.readFileAnswer();  
+        System.out.println(qna.getListAnswer());
     }
 
 
