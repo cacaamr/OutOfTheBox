@@ -1,8 +1,7 @@
-package com.quiz.OutOfTheBox;
+package com.quiz.OutOfTheBox.model;
 
 import java.io.*;
 import java.util.*;
-
 
 public class QnA {
 
@@ -18,74 +17,74 @@ public class QnA {
         return listQuestion;
     }
 
-    public void readFileQuestion(){
-        try{
-            br = new BufferedReader(new FileReader("question.txt"));
+    public void readFileQuestion(String pertanyaan) {
+        try {
+            br = new BufferedReader(new FileReader(pertanyaan));
             String txt = br.readLine();
-    
-            while(txt != null){
+
+            while (txt != null) {
                 listQuestion.add(txt);
                 txt = br.readLine();
             }
-    
+
             System.out.println(listQuestion);
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
 
-    public void readFileAnswer(){
-        try{
-            br = new BufferedReader(new FileReader("answer.txt"));
+    public void readFileAnswer(String jawaban) {
+        try {
+            br = new BufferedReader(new FileReader(jawaban));
             String txt = br.readLine();
-    
-            while(txt != null){
+
+            while (txt != null) {
                 listAnswer.add(txt);
                 txt = br.readLine();
             }
-    
+
             System.out.println(listAnswer);
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
 
-
-
     // public void listQnA() throws IOException{
-    //     // try{
-    //         BufferedReader br = new BufferedReader(new FileReader("E:\\qna.txt"));
-    //         String txt = br.readLine();
-    //         ArrayList<String> listQuestion = new ArrayList<String>();
-    //         ArrayList<String> listAnswer = new ArrayList<String>();
-    //         // ArrayList<String> listQna= new ArrayList<String>();
-    
-    //         while(txt != null){
-    //             String [] listQna = txt.split("//");
-    //             listQuestion.add(listQna[0]);
-    //             listAnswer.add(listQna[1]);
-    //             System.out.println(listQna);
-    //             txt = br.readLine();
-    //         }
-    //     // }catch(IOException e){
-    //     //     e.printStackTrace();
-    //     // }catch(FileNotFoundException e){
-    //     //     e.printStackTrace();
-    //     // }
+    // // try{
+    // BufferedReader br = new BufferedReader(new FileReader("E:\\qna.txt"));
+    // String txt = br.readLine();
+    // ArrayList<String> listQuestion = new ArrayList<String>();
+    // ArrayList<String> listAnswer = new ArrayList<String>();
+    // // ArrayList<String> listQna= new ArrayList<String>();
+
+    // while(txt != null){
+    // String [] listQna = txt.split("//");
+    // listQuestion.add(listQna[0]);
+    // listAnswer.add(listQna[1]);
+    // System.out.println(listQna);
+    // txt = br.readLine();
+    // }
+    // // }catch(IOException e){
+    // // e.printStackTrace();
+    // // }catch(FileNotFoundException e){
+    // // e.printStackTrace();
+    // // }
     // }
 
     // public void printzz(){
-    //     String str = "HelloWorld";
+    // String str = "HelloWorld";
     // }
 
-
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String pertanyaan = in.nextLine();
+        String jawaban = in.nextLine();
         QnA qna = new QnA();
-        qna.readFileQuestion(); 
-        qna.readFileAnswer();  
+        qna.readFileQuestion(pertanyaan);
+        qna.readFileAnswer(jawaban);
+        in.close();
     }
-
 
 }
