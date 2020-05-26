@@ -17,9 +17,10 @@ public class QnA {
         return listQuestion;
     }
 
-    public void readFileQuestion(String pertanyaan) {
+    public void readFileQuestion() {
         try {
-            br = new BufferedReader(new FileReader(pertanyaan));
+            br = new BufferedReader(new FileReader(
+                    "D:/Visual Studio/JAVA/OutOfTheBox/src/main/java/com/quiz/OutOfTheBox/model/question.txt"));
             String txt = br.readLine();
 
             while (txt != null) {
@@ -34,9 +35,10 @@ public class QnA {
 
     }
 
-    public void readFileAnswer(String jawaban) {
+    public void readFileAnswer() {
         try {
-            br = new BufferedReader(new FileReader(jawaban));
+            br = new BufferedReader(new FileReader(
+                    "D:/Visual Studio/JAVA/OutOfTheBox/src/main/java/com/quiz/OutOfTheBox/model/answer.txt"));
             String txt = br.readLine();
 
             while (txt != null) {
@@ -78,13 +80,9 @@ public class QnA {
     // }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String pertanyaan = in.nextLine();
-        String jawaban = in.nextLine();
         QnA qna = new QnA();
-        qna.readFileQuestion(pertanyaan);
-        qna.readFileAnswer(jawaban);
-        in.close();
+        qna.readFileQuestion();
+        qna.readFileAnswer();
     }
 
 }
