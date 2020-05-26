@@ -17,7 +17,7 @@ public class MainController {
 
     @GetMapping("/form-username")
     public String formUser(Model model) {
-        // model.addAttribute("user", new User());
+        model.addAttribute("user", new Pemain());
         return "form-username";
     }
 
