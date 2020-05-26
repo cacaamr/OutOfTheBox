@@ -29,6 +29,7 @@ public class Quiz {
     public static void main(String[] args) {
         Quiz quiz = new Quiz();
         System.out.println(quiz.getRandomQuestion());
+
     }
 
 }
