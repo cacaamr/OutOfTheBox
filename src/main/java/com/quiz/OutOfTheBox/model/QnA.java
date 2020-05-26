@@ -20,7 +20,7 @@ public class QnA {
 
     public void readFileQuestion(){
         try{
-            br = new BufferedReader(new FileReader("question.txt"));
+            br = new BufferedReader(new FileReader("/Users/maishaaameerarifani/Desktop/OutOfTheBox/src/main/java/com/quiz/OutOfTheBox/model/question.txt"));
             String txt = br.readLine();
     
             while(txt != null){
@@ -37,7 +37,7 @@ public class QnA {
 
     public void readFileAnswer(){
         try{
-            br = new BufferedReader(new FileReader("answer.txt"));
+            br = new BufferedReader(new FileReader("/Users/maishaaameerarifani/Desktop/OutOfTheBox/src/main/java/com/quiz/OutOfTheBox/model/answer.txt"));
             String txt = br.readLine();
     
             while(txt != null){
