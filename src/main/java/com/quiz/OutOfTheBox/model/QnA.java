@@ -1,4 +1,4 @@
-package com.quiz.OutOfTheBox;
+package com.quiz.OutOfTheBox.model;
 
 import java.io.*;
 import java.util.*;
@@ -79,13 +79,5 @@ public class QnA {
     // public void printzz(){
     //     String str = "HelloWorld";
     // }
-
-
-    public static void main(String[] args) {
-        QnA qna = new QnA();
-        qna.readFileQuestion(); 
-        qna.readFileAnswer();  
-    }
-
 
 }
