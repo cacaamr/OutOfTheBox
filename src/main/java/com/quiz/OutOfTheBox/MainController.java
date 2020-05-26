@@ -1,5 +1,7 @@
 package com.quiz.OutOfTheBox;
 
+import com.quiz.OutOfTheBox.model.Pemain;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import java.util.List;
@@ -17,7 +19,7 @@ public class MainController {
 
     @GetMapping("/form-username")
     public String formUser(Model model) {
-        // model.addAttribute("user", new User());
+        model.addAttribute("user", new Pemain());
         return "form-username";
     }
 

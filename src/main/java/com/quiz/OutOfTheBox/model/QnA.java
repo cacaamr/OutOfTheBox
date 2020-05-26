@@ -6,9 +6,16 @@ import java.util.*;
 
 public class QnA {
 
-    BufferedReader br;
+    public BufferedReader br;
     private ArrayList<String> listQuestion = new ArrayList<String>();
     private ArrayList<String> listAnswer = new ArrayList<String>();
+
+    public QnA(){
+        readFileAnswer();
+        readFileQuestion();
+
+    }
+    
 
     public ArrayList<String> getListAnswer() {
         return listAnswer;
@@ -20,7 +27,7 @@ public class QnA {
 
     public void readFileQuestion(){
         try{
-            br = new BufferedReader(new FileReader("E:\\Nadin\\KULIAH SEMESTER 2\\DDP2\\PROYEK AKHIR\\OutOfTheBox\\src\\main\\java\\com\\quiz\\OutOfTheBox\\model\\question.txt"));
+            br = new BufferedReader(new FileReader("OutOfTheBox\\src\\main\\java\\com\\quiz\\OutOfTheBox\\model\\question.txt"));
             String txt = br.readLine();
     
             while(txt != null){
@@ -28,7 +35,7 @@ public class QnA {
                 txt = br.readLine();
             }
     
-            System.out.println(listQuestion);
+            // System.out.println(listQuestion);
         } catch(IOException e){
             e.printStackTrace();
         }
@@ -37,7 +44,7 @@ public class QnA {
 
     public void readFileAnswer(){
         try{
-            br = new BufferedReader(new FileReader("E:\\Nadin\\KULIAH SEMESTER 2\\DDP2\\PROYEK AKHIR\\OutOfTheBox\\src\\main\\java\\com\\quiz\\OutOfTheBox\\model\\answer.txt"));
+            br = new BufferedReader(new FileReader("OutOfTheBox\\src\\main\\java\\com\\quiz\\OutOfTheBox\\model\\question.txt"));
             String txt = br.readLine();
     
             while(txt != null){
@@ -45,20 +52,33 @@ public class QnA {
                 txt = br.readLine();
             }
     
-            System.out.println(listAnswer);
+            // System.out.println(listAnswer);
         } catch(IOException e){
             e.printStackTrace();
         }
         
     }
 
+    Random randomQuestion = new Random();
+
+    public String getRandomQuestion(){
+        int index = randomQuestion.nextInt(getListQuestion().size());
+        String quest = getListQuestion().get(index);
+        // System.out.println(quest);
+        //System.out.println(index);
+        //System.out.println("halo " + quest);
+        return quest;
+    }
+
+
 
     public static void main(String[] args) {
         QnA qna = new QnA();
-        qna.readFileQuestion(); 
-        System.out.println(qna.getListQuestion()); 
-        qna.readFileAnswer();  
-        System.out.println(qna.getListAnswer());
+        // qna.readFileQuestion(); 
+        // System.out.println(qna.getListQuestion()); 
+        // qna.readFileAnswer();  
+        // System.out.println(qna.getListAnswer());
+        System.out.println(qna.getRandomQuestion());
     }
 
 
