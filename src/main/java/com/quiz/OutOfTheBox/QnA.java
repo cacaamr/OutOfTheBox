@@ -1,5 +1,9 @@
 package com.quiz.OutOfTheBox;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+
 import java.io.*;
 import java.util.*;
 
@@ -11,16 +15,22 @@ public class QnA {
     private ArrayList<String> listAnswer = new ArrayList<String>();
 
     public ArrayList<String> getListAnswer() {
+
         return listAnswer;
     }
 
     public ArrayList<String> getListQuestion() {
+
         return listQuestion;
     }
 
+    File quest = new File(getClass().getClassLoader().getResource("question.txt").getFile());
+    File answ = new File(getClass().getClassLoader().getResource("answer.txt").getFile());
+
     public void readFileQuestion(){
+
         try{
-            br = new BufferedReader(new FileReader("question.txt"));
+            br = new BufferedReader(new FileReader(quest));
             String txt = br.readLine();
     
             while(txt != null){
@@ -37,7 +47,7 @@ public class QnA {
 
     public void readFileAnswer(){
         try{
-            br = new BufferedReader(new FileReader("answer.txt"));
+            br = new BufferedReader(new FileReader(answ));
             String txt = br.readLine();
     
             while(txt != null){
@@ -83,8 +93,8 @@ public class QnA {
 
     public static void main(String[] args) {
         QnA qna = new QnA();
-        qna.readFileQuestion(); 
-        qna.readFileAnswer();  
+        qna.readFileQuestion();
+        qna.readFileAnswer();
     }
 
 
