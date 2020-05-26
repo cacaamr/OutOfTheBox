@@ -13,6 +13,10 @@ public class Pemain {
     public static ArrayList<Pemain> getDaftarPemain() {
         return daftarPemain;
     }
+
+    public static void addPemain(Pemain pemain) {
+        daftarPemain.add(pemain);
+    }
     
     public void setNama(String nama) {
         this.nama = nama;
@@ -30,6 +34,10 @@ public class Pemain {
         this.skor = skor;
     }
 
+    public void tambahSkor() {
+        skor += 10;
+    }
+
     public int getNyawa() {
         return nyawa;
     }
@@ -41,5 +49,4 @@ public class Pemain {
     public void setNyawa(int nyawa) {
         this.nyawa = nyawa;
     }
-
 }
