@@ -13,6 +13,10 @@ public class Pemain {
     public static ArrayList<Pemain> getDaftarPemain() {
         return daftarPemain;
     }
+
+    public static void addPemain(Pemain pemain) {
+        daftarPemain.add(pemain);
+    }
     
     public void setNama(String nama) {
         this.nama = nama;

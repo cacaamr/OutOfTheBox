@@ -26,6 +26,6 @@ public class Quiz {
     }
 
     public String getAnswer() {
-        return qna.getListAnswer().get(index);
+        return qna.getListAnswer().get(getIndex());
     }
 }
