@@ -12,7 +12,6 @@ public class Quiz {
     public Quiz() {
         randomQuestion = new Random();
         qna = new QnA();
-
     }
 
     public String getRandomQuestion() {
