@@ -32,7 +32,7 @@ public class MainController {
         return "hasil-form-username"; 
     }
 
-    @GetMapping("/play")
+    @GetMapping("/main")
     public String hasilFormUser(@ModelAttribute Quiz quiz) {
         return "main.html";
     }
