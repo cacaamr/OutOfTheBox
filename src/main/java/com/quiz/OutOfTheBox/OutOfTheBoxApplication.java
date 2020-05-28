@@ -8,6 +8,5 @@ public class OutOfTheBoxApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OutOfTheBoxApplication.class, args);
-
 	}
 }

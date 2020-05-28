@@ -6,6 +6,7 @@ import java.util.Random;
 public class Quiz {
     private Random randomQuestion;
     public QnA qna;
+    int index;
     // ArrayList<String> questarr;
 
     public Quiz() {
@@ -18,5 +19,13 @@ public class Quiz {
         int index = randomQuestion.nextInt(qna.getListQuestion().size());
         String quest = qna.getListQuestion().get(index);
         return quest;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public String getAnswer() {
+        return qna.getListAnswer().get(index);
     }
 }

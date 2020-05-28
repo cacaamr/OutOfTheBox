@@ -41,5 +41,4 @@ public class Pemain {
     public void setNyawa(int nyawa) {
         this.nyawa = nyawa;
     }
-
 }

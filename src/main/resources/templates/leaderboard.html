@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Out of The Box Quiz</title>
+    <link rel="stylesheet" th:href="@{style.css}" />
+    <style>
+      table {
+        counter-reset: rowNumber;
+      }
+      table tr::before {
+        counter-increment: rowNumber;
+        content: counter(rowNumber);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="table-container">
+      <a href="/" class="button1">Kembali ke halaman utama</a>
+      <h2>LEADERBOARD</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Nama</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- if block untuk meng-handle jika belum ada pemain -->
+          <tr th:if="${daftarUser.empty}">
+            <td colspan="3">Belum ada pemain</td>
+          </tr>
+          <!-- iterasi daftar pemain yang diurutkan berdasarkan score untuk ditampilkan dalam tabel -->
+          <tr th:each="user : ${daftarUser}">
+            <td><span th:text="${user.nama}"></span></td>
+            <td><span th:text="${user.score}"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
