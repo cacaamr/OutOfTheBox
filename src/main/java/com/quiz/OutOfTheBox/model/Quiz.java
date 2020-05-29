@@ -20,7 +20,13 @@ public class Quiz {
         return quest;
     }
 
+    public ArrayList getList(){
+
+        return qna.getListQuestion();
+    }
+
     public int getIndex() {
+
         return index;
     }
 
