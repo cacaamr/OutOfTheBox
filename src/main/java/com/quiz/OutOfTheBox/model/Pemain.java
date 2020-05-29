@@ -9,10 +9,6 @@ public class Pemain {
     private int nyawa = 5;
     protected boolean gameOver = false;
 
-    public Pemain(String nama) {
-        this.nama = nama;
-    }
-
     public static ArrayList<Pemain> getDaftarPemain() {
         return daftarPemain;
     }

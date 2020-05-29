@@ -20,7 +20,7 @@ public class MainController {
 
     @GetMapping("/form-username")
     public String formUser(Model model) {
-        // model.addAttribute("pemain", new Pemain());
+        model.addAttribute("pemain", new Pemain());
         return "form-username";
     }
 
@@ -36,20 +36,22 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("/main2") 
-    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,Model model) {
-        if(!quiz.getAnswer().equals(answer.getAnswer())) {
+    @PostMapping("/main")
+    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
+            Model model) {
+        if (!quiz.getAnswer().equals(answer.getAnswer())) {
             pemain.kurangiNyawa();
-            if(pemain.getNyawa() < 0) {
+            if (pemain.getNyawa() < 0) {
                 return "gameover";
-            } model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
-        }else {
+            }
+            model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
+        } else {
             pemain.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
-        } return "main2";
+        }
+        return "main2";
     }
-    
-    
+
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
         return "leaderboard";

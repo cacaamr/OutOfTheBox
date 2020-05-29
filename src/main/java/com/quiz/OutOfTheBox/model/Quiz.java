@@ -13,7 +13,7 @@ public class Quiz {
     public Quiz() {
         randomQuestion = new Random();
         qna = new QnA();
-        int index = randomQuestion.nextInt(qna.getListQuestion().size());
+        index = randomQuestion.nextInt(qna.getListQuestion().size());
     }
 
     public String getRandomQuestion() {
@@ -22,7 +22,7 @@ public class Quiz {
         return question;
     }
 
-    public ArrayList<String> getList(){
+    public ArrayList<String> getList() {
         return qna.getListQuestion();
     }
 
