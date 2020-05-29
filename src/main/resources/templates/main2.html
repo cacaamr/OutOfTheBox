@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Out of The Box Quiz</title>
+    <link rel="stylesheet" th:href="@{style.css}" />
+  </head>
+  <body> 
+    <h1 th:if="${answer.getAnswer() == quiz.getAnswer()}" class="active">Jawaban Anda Benar</h1>
+    <h1 th:unless="${answer.getAnswer() != quiz.getAnswer()}">Jawaban Anda Salah</h1>
+</th:block>
+  </body>
+</html>
+
+
