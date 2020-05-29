@@ -2,6 +2,7 @@ package com.quiz.OutOfTheBox;
 
 import com.quiz.OutOfTheBox.model.Answer;
 import com.quiz.OutOfTheBox.model.Pemain;
+import com.quiz.OutOfTheBox.model.QnA;
 import com.quiz.OutOfTheBox.model.Quiz;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
+    QnA qna = new QnA();
+    String jawaban;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -32,20 +35,26 @@ public class MainController {
 
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
+        Quiz newquiz = new Quiz();
+        String pertanyaan = quiz.getRandomQuestion();
+        int index = quiz.getIndex();
+        model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
+        jawaban = newquiz.getAnswerbyIndex(index);
         return "main";
     }
 
     @PostMapping("/main2")
     public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
             Model model) {
-        if (!quiz.getAnswer().equals(answer.getAnswer())) {
+        if (!jawaban.equals(answer.getAnswer())) {
             pemain.kurangiNyawa();
             if (pemain.getNyawa() < 0) {
                 return "gameover";
             }
             model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
-            model.addAttribute("jawab", quiz.getAnswer());
+            model.addAttribute("jawab", jawaban);
+            model.addAttribute("j", answer.getAnswer());
         } else {
             pemain.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
