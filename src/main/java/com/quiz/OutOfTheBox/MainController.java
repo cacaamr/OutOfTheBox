@@ -1,5 +1,6 @@
 package com.quiz.OutOfTheBox;
 
+import com.quiz.OutOfTheBox.model.Answer;
 import com.quiz.OutOfTheBox.model.Pemain;
 import com.quiz.OutOfTheBox.model.Quiz;
 
@@ -31,14 +32,21 @@ public class MainController {
     }
 
     @GetMapping("/main")
-    public String Main(@ModelAttribute Quiz quiz) {
+    public String Main(@ModelAttribute Quiz quiz, Model model) {
+        model.addAttribute("jawaban", new Answer());
         return "main";
     }
 
-    @PostMapping("/main2") 
-    public String menjawab(@ModelAttribute Pemain pemain) {
-        return "main2"; 
+    @PostMapping("/main2")
+    public String jawab(@ModelAttribute Quiz quiz, Model model) {
+        model.addAttribute("jawaban", new Answer());
+        return "main";
     }
+
+//    @PostMapping("/main2")
+//    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz) {
+//        return "main2";
+//    }
     
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
