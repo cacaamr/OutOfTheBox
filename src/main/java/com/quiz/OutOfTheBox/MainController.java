@@ -1,11 +1,10 @@
 package com.quiz.OutOfTheBox;
 
 import com.quiz.OutOfTheBox.model.Pemain;
+import com.quiz.OutOfTheBox.model.Quiz;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import java.util.List;
-import com.quiz.OutOfTheBox.model.Pemain;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,7 @@ public class MainController {
 
     @GetMapping("/form-username")
     public String formUser(Model model) {
-        //model.addAttribute("pemain", new Pemain());
+        // model.addAttribute("pemain", new Pemain());
         return "form-username";
     }
 
@@ -28,6 +27,16 @@ public class MainController {
     public String hasilFormUser(@ModelAttribute Pemain pemain) {
         Pemain.addPemain(pemain);
         return "hasil-form-username";
+    }
+
+    @GetMapping("/main")
+    public String Main(@ModelAttribute Quiz quiz) {
+        return "main";
+    }
+
+    @PostMapping("/main2")
+    public String menjawab(@ModelAttribute Pemain pemain) {
+        return "main2";
     }
 
     @GetMapping("/leaderboard")

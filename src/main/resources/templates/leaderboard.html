@@ -28,13 +28,13 @@
         </thead>
         <tbody>
           <!-- if block untuk meng-handle jika belum ada pemain -->
-          <tr th:if="${daftarUser.empty}">
+          <tr th:if="${daftarPemain.empty}">
             <td colspan="3">Belum ada pemain</td>
           </tr>
           <!-- iterasi daftar pemain yang diurutkan berdasarkan score untuk ditampilkan dalam tabel -->
-          <tr th:each="user : ${daftarUser}">
-            <td><span th:text="${user.nama}"></span></td>
-            <td><span th:text="${user.score}"></span></td>
+          <tr th:each="pemain : ${daftarPemain}">
+            <td><span th:text="${pemain.nama}"></span></td>
+            <td><span th:text="${pemain.score}"></span></td>
           </tr>
         </tbody>
       </table>

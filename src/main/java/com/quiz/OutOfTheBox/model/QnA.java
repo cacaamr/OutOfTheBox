@@ -52,31 +52,4 @@ public class QnA {
         }
 
     }
-
-    // public void listQnA() throws IOException{
-    // // try{
-    // BufferedReader br = new BufferedReader(new FileReader("E:\\qna.txt"));
-    // String txt = br.readLine();
-    // ArrayList<String> listQuestion = new ArrayList<String>();
-    // ArrayList<String> listAnswer = new ArrayList<String>();
-    // // ArrayList<String> listQna= new ArrayList<String>();
-
-    // while(txt != null){
-    // String [] listQna = txt.split("//");
-    // listQuestion.add(listQna[0]);
-    // listAnswer.add(listQna[1]);
-    // System.out.println(listQna);
-    // txt = br.readLine();
-    // }
-    // // }catch(IOException e){
-    // // e.printStackTrace();
-    // // }catch(FileNotFoundException e){
-    // // e.printStackTrace();
-    // // }
-    // }
-
-    // public void printzz(){
-    // String str = "HelloWorld";
-    // }
-
 }
