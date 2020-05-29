@@ -7,9 +7,9 @@ public class Answer {
         return answer;
     }
 
-    public String setAnswer(String jawaban) {
+    public void setAnswer(String jawaban) {
 
         answer = jawaban;
-        return answer;
+
     }
 }

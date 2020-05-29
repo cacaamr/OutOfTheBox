@@ -15,22 +15,28 @@ public class Quiz {
     }
 
     public String getRandomQuestion() {
-        int index = randomQuestion.nextInt(qna.getListQuestion().size());
+        index = randomQuestion.nextInt(qna.getListQuestion().size());
         String quest = qna.getListQuestion().get(index);
         return quest;
     }
 
-    public ArrayList getList(){
-
-        return qna.getListQuestion();
-    }
-
     public int getIndex() {
-
         return index;
     }
 
+    public ArrayList<String> getList(){
+        return qna.getListQuestion();
+    }
+
     public String getAnswer() {
+
         return qna.getListAnswer().get(getIndex());
+    }
+
+    public static void main(String[] args) {
+        Quiz quiz = new Quiz();
+        System.out.println(quiz.getRandomQuestion());
+        System.out.println(quiz.getAnswer());
+
     }
 }

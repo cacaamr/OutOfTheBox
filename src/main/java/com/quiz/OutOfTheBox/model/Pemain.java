@@ -30,12 +30,12 @@ public class Pemain {
         return skor;
     }
 
-    public int tambahSkor(){
-        return skor+=10;
-    }
-
     public void setSkor(int skor) {
         this.skor = skor;
+    }
+
+    public void tambahSkor() {
+        skor += 10;
     }
 
     public int getNyawa() {
