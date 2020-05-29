@@ -36,7 +36,7 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("/main")
+    @PostMapping("/main2")
     public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
             Model model) {
         if (!quiz.getAnswer().equals(answer.getAnswer())) {
@@ -45,6 +45,7 @@ public class MainController {
                 return "gameover";
             }
             model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
+            model.addAttribute("jawab", quiz.getAnswer());
         } else {
             pemain.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
