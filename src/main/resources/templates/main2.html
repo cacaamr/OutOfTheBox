@@ -5,10 +5,19 @@
     <link rel="stylesheet" th:href="@{style.css}" />
   </head>
   <body> 
-    <h1 th:if="${answer.getAnswer() == quiz.getAnswer()}" class="active">Jawaban Anda Benar</h1>
-    <h1 th:unless="${answer.getAnswer() != quiz.getAnswer()}">Jawaban Anda Salah</h1>
-</th:block>
+    <div class="container">
+        <div th:if="${answer.getAnswer() == quiz.getAnswer()">
+            <h1>Jawaban Anda Benar </h1>
+            <div "${pemain.tambahSkor()}" </div>
+        </div>
+        <div th:unless="${answer.getAnswer() != quiz.getAnswer()}">
+            <h1>Jawaban Anda Salah</h1>
+            <div "${pemain.kurangiNyawa()}" </div>
+        </div>
+        <div class="button-container">
+            <a href="/main"> <button class="button1">Selanjutnya</button></a>
+      </div>
+        </th:block>
+    </div>
   </body>
 </html>
-
-
