@@ -20,7 +20,7 @@ public class Quiz {
         return quest;
     }
 
-    public ArrayList getList(){
+    public ArrayList<String> getList(){
         return qna.getListQuestion();
     }
 

@@ -34,6 +34,10 @@ public class Pemain {
         this.skor = skor;
     }
 
+    public void tambahSkor() {
+        skor += 10;
+    }
+
     public int getNyawa() {
         return nyawa;
     }
