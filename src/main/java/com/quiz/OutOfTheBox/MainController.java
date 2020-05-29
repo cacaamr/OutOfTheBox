@@ -5,8 +5,6 @@ import com.quiz.OutOfTheBox.model.Quiz;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import java.util.List;
-import com.quiz.OutOfTheBox.model.Pemain;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,8 +31,13 @@ public class MainController {
     }
 
     @GetMapping("/main")
-    public String hasilFormUser(@ModelAttribute Quiz quiz) {
-        return "main.html";
+    public String Main(@ModelAttribute Quiz quiz) {
+        return "main";
+    }
+
+    @PostMapping("/main2") 
+    public String menjawab(@ModelAttribute Pemain pemain) {
+        return "main2"; 
     }
     
     @GetMapping("/leaderboard")
