@@ -21,8 +21,8 @@ public class Quiz {
         String question = que[0];
         return question;
     }
- 
-    public ArrayList getList(){
+
+    public ArrayList<String> getList(){
         return qna.getListQuestion();
     }
 
