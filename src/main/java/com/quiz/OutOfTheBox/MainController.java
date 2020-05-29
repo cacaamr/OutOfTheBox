@@ -36,15 +36,9 @@ public class MainController {
         return "main";
     }
 
-<<<<<<< HEAD
     @PostMapping("/main2")
-    public String menjawab(@ModelAttribute Pemain pemain) {
-        return "main2";
-=======
-    @PostMapping("/main2") 
     public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz) {
-        return "main2"; 
->>>>>>> 15e87739eac9a0ead3a742fb42d33f183f6d8f7b
+        return "main2";
     }
 
     @GetMapping("/leaderboard")
