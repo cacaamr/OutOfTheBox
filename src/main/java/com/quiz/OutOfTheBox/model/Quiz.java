@@ -13,14 +13,15 @@ public class Quiz {
     public Quiz() {
         randomQuestion = new Random();
         qna = new QnA();
+        int index = randomQuestion.nextInt(qna.getListQuestion().size());
     }
 
     public String getRandomQuestion() {
-        int index = randomQuestion.nextInt(qna.getListQuestion().size());
-        String quest = qna.getListQuestion().get(index);
-        return quest;
+        String[] que = qna.getListQnA().get(index);
+        String question = que[0];
+        return question;
     }
-
+ 
     public ArrayList getList(){
         return qna.getListQuestion();
     }
@@ -30,6 +31,8 @@ public class Quiz {
     }
 
     public String getAnswer() {
-        return qna.getListAnswer().get(getIndex());
+        String[] ans = qna.getListQnA().get(index);
+        String answer = ans[1];
+        return answer;
     }
 }
