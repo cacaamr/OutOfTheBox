@@ -2,41 +2,37 @@ package com.quiz.OutOfTheBox.model;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Quiz {
     private Random randomQuestion;
     public QnA qna;
     int index;
-    // ArrayList<String> questarr;
+    ArrayList<String> questarr ;
 
     public Quiz() {
-        randomQuestion = new Random();
         qna = new QnA();
+        randomQuestion = new Random();
+        index = randomQuestion.nextInt(qna.getListQnA().size());
     }
 
     public String getRandomQuestion() {
-        index = randomQuestion.nextInt(qna.getListQuestion().size());
-        String quest = qna.getListQuestion().get(index);
-        return quest;
+        String[] que = qna.getListQnA().get(index);
+        String question = que[0];
+        return question;
+    }
+
+    public ArrayList<String[]> getList() {
+        return qna.getListQnA();
     }
 
     public int getIndex() {
         return index;
     }
 
-    public ArrayList<String> getList(){
-        return qna.getListQuestion();
-    }
-
     public String getAnswer() {
-
-        return qna.getListAnswer().get(getIndex());
-    }
-
-    public static void main(String[] args) {
-        Quiz quiz = new Quiz();
-        System.out.println(quiz.getRandomQuestion());
-        System.out.println(quiz.getAnswer());
-
+        String[] ans = qna.getListQnA().get(index);
+        String answer = ans[1];
+        return answer;
     }
 }

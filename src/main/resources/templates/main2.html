@@ -4,12 +4,10 @@
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
   </head>
-  <body> 
+  <body>
     <div class="container">
-        <h1 th:text="${poin}"></h1>
-        <h2 th:text="${jawab}"></h2>
-        <a href="/main"> <button class="button1">next question!</button></a>
-        <a href="/leaderboard"> <button class="button1">Lihat leaderboard</button></a>
+      <span th:text="${poin}"> </span>
+      <span th:text="${jawab}"></span>
     </div>
   </body>
 </html>

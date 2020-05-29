@@ -2,7 +2,6 @@ package com.quiz.OutOfTheBox.model;
 
 import java.util.ArrayList;
 
-
 public class Pemain {
     private static ArrayList<Pemain> daftarPemain = new ArrayList<Pemain>();
     private String nama;
@@ -17,13 +16,13 @@ public class Pemain {
     public static void addPemain(Pemain pemain) {
         daftarPemain.add(pemain);
     }
-    
+
     public void setNama(String nama) {
         this.nama = nama;
     }
 
     public String getNama() {
-        return nama;
+        return this.nama;
     }
 
     public int getSkor() {

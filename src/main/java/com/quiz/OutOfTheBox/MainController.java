@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 @Controller
 public class MainController {
 
@@ -25,33 +24,36 @@ public class MainController {
         return "form-username";
     }
 
-    @PostMapping("/hasil-form-username") 
+    @PostMapping("/hasil-form-username")
     public String hasilFormUser(@ModelAttribute Pemain pemain) {
         Pemain.addPemain(pemain);
-        return "hasil-form-username"; 
+        return "hasil-form-username";
     }
 
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
         model.addAttribute("jawaban", new Answer());
+        model.addAttribute("pertanyaan", quiz.getRandomQuestion());
         return "main";
     }
 
-    @PostMapping("/main2") 
-    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,Model model) {
-        if(!quiz.getAnswer().equals(answer.getAnswer())){
+    @PostMapping("/main2")
+    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
+            Model model) {
+        if (!quiz.getAnswer().equals(answer.getAnswer())) {
             pemain.kurangiNyawa();
-            if(pemain.getNyawa() < 0) {
+            if (pemain.getNyawa() < 0) {
                 return "gameover";
-            } model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
+            }
+            model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
             model.addAttribute("jawab", quiz.getAnswer());
-        }else {
+        } else {
             pemain.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
-        } return "main2";
+        }
+        return "main2";
     }
-    
-    
+
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
         return "leaderboard";
