@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MainController {
     QnA qna = new QnA();
+    String pertanyaan;
     String jawaban;
+    int index;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -36,8 +38,8 @@ public class MainController {
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
         Quiz newquiz = new Quiz();
-        String pertanyaan = quiz.getRandomQuestion();
-        int index = quiz.getIndex();
+        pertanyaan = quiz.getRandomQuestion();
+        index = quiz.getIndex();
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
         jawaban = newquiz.getAnswerbyIndex(index);
