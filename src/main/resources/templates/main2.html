@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Out of The Box Quiz</title>
+    <link rel="stylesheet" th:href="@{style.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+      <span th:text="${poin}"> </span>
+      <span th:text="${skor}"></span>
+      <span th:text="${nyawa}"></span>
+      </h1>
+      <div class="button-container">
+        <a href="/main" class="button1"><button>Coba Lagi</button></a>
+        <a href="/leaderboard" class="button1"><button>leaderboard</button></a>
+      </div>
+    </div>
+
+  </body>
+</html>
