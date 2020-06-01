@@ -1,6 +1,14 @@
 body {
   overflow: hidden;
-  background-color: aquamarine;
+  background-image: url("32.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: ease-in-out;
+}
+
+.welcome {
+  font-family: "Viga", sans-serif;
+  color : black;
 }
 
 .container {
@@ -46,4 +54,21 @@ body {
 
 .btn {
   margin: 8px;
+}
+
+.table-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  text-align: center;
+  min-width: 50px;
 }

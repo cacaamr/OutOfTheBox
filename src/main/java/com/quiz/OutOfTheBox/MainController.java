@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
-    QnA qna = new QnA();
+    int index;
     String jawaban;
+    QnA qna = new QnA();
+    Pemain player;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -29,41 +31,42 @@ public class MainController {
 
     @PostMapping("/hasil-form-username")
     public String hasilFormUser(@ModelAttribute Pemain pemain) {
+        player = pemain;
         Pemain.addPemain(pemain);
         return "hasil-form-username";
     }
 
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
-        Quiz newquiz = new Quiz();
         String pertanyaan = quiz.getRandomQuestion();
-        int index = quiz.getIndex();
+        index = quiz.getIndex();
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
-        jawaban = newquiz.getAnswerbyIndex(index);
+        model.addAttribute("player", player);
+        jawaban = quiz.getAnswerbyIndex(index);
         return "main";
     }
 
     @PostMapping("/main2")
-    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
-            Model model) {
-        if (!jawaban.equals(answer.getAnswer())) {
-            pemain.kurangiNyawa();
-            if (pemain.getNyawa() < 0) {
+    public String menjawab(@ModelAttribute Answer answer, @ModelAttribute Quiz quiz, Model model){
+        model.addAttribute("player", player);
+        if (!jawaban.equals(quiz.getAnswer())) {
+            player.kurangiNyawa();
+            if (player.getNyawa() < 0) {
                 return "gameover";
-            }
-            model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
-            model.addAttribute("jawab", jawaban);
-            model.addAttribute("j", answer.getAnswer());
+            }model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
         } else {
-            pemain.tambahSkor();
+            player.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
         }
+        model.addAttribute("nyawa", player.getNyawa());
+        model.addAttribute("skor", player.getSkor());
         return "main2";
     }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
+        model.addAttribute("daftarPemain", Pemain.getDaftarPemain());
         return "leaderboard";
     }
 

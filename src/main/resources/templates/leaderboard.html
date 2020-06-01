@@ -3,25 +3,14 @@
   <head>
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
-    <style>
-      table {
-        counter-reset: rowNumber;
-      }
-      table tr::before {
-        counter-increment: rowNumber;
-        content: counter(rowNumber);
-      }
-    </style>
   </head>
 
   <body>
     <div class="table-container">
-      <a href="/" class="button1">Kembali ke halaman utama</a>
       <h2>LEADERBOARD</h2>
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
             <th>Nama</th>
             <th>Score</th>
           </tr>
@@ -33,11 +22,12 @@
           </tr>
           <!-- iterasi daftar pemain yang diurutkan berdasarkan score untuk ditampilkan dalam tabel -->
           <tr th:each="pemain : ${daftarPemain}">
-            <td><span th:text="${pemain.nama}"></span></td>
-            <td><span th:text="${pemain.score}"></span></td>
+            <td><span th:text="${pemain.getNama()}"></span></td>
+            <td><span th:text="${pemain.getSkor()}"></span></td>
           </tr>
         </tbody>
       </table>
+      <a href="/" class="button1">Kembali ke halaman utama</a>
     </div>
   </body>
 </html>
