@@ -32,7 +32,7 @@ public class MainController {
 
     @PostMapping("/hasil-form-username")
     public String hasilFormUser(@ModelAttribute Pemain pemain) {
-        player= pemain;
+        player = pemain;
         Pemain.addPemain(pemain);
         return "hasil-form-username";
     }
@@ -51,7 +51,7 @@ public class MainController {
     @PostMapping("/main2")
     public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
             Model model) {
-        model.addAttribute("player",player);
+        model.addAttribute("player", player);
         if (!jawaban.equals(answer.getAnswer())) {
             player.kurangiNyawa();
             if (player.getNyawa() <= 0) {
@@ -63,14 +63,14 @@ public class MainController {
             player.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
         }
-        model.addAttribute("nyawa", player.getNyawa());
         model.addAttribute("skor", player.getSkor());
+        model.addAttribute("nyawa",player.getNyawa());
+
         return "main2";
     }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
-        model.addAttribute("daftarPemain", player.getDaftarPemain());
         return "leaderboard";
     }
 

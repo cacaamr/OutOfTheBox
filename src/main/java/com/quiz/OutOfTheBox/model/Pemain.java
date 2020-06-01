@@ -26,24 +26,24 @@ public class Pemain {
     }
 
     public int getSkor() {
-        return skor;
+        return this.skor;
     }
 
     public void setSkor(int skor) {
         this.skor = skor;
     }
 
-    public void tambahSkor(){
-    this.skor += 10;
+    public void tambahSkor() {
+        this.skor += 10;
     }
+
 
     public int getNyawa() {
         return nyawa;
     }
 
     public void kurangiNyawa() {
-
-    this.nyawa--;
+        nyawa--;
     }
 
     public void setNyawa(int nyawa) {
