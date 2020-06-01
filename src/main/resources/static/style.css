@@ -1,11 +1,6 @@
-
-html, body {
-  height: 100%;
-}
-
 body {
   overflow: hidden;
-  background-image: url(image-from-rawpixel-id-2361865-original.jpg);
+  background-image: url("image-from-rawpixel-id-2361865-original.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -14,107 +9,11 @@ body {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  /* background: #FAFAFA; */
-}
-
-button {
-  padding: 20px 40px;
-  background: none;
-  border: none;
-  position: relative;
-  text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 3px;
-  cursor: pointer;
-}
+  font-family: 'Timmana', sans-serif;
+  font-style: italic;
+  /*background: #FAFAFA;*/
 
-.button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
-}
-button:before {
-  -webkit-transform: translate(-3px, -3px);
-  transform: translate(-3px, -3px);
-}
-button:after, button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border: 2px solid #000;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
-}
-button:after {
-  -webkit-transform: translate(3px, 3px);
-  transform: translate(3px, 3px);
-}
-button:after, button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border: 2px solid #000;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
-}
-
-input {
-  padding: 20px 40px;
-  background: none;
-  border: none;
-  position: relative;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 3px;
-  cursor: pointer;
-}
-
-
-input:before {
-  -webkit-transform: translate(-3px, -3px);
-  transform: translate(-3px, -3px);
-}
-input:after, input:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border: 2px solid #000;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
-}
-input:after {
-  -webkit-transform: translate(3px, 3px);
-  transform: translate(3px, 3px);
-}
-input:after, input:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border: 2px solid #000;
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 
@@ -125,6 +24,15 @@ input:after, input:before {
   height: 100vh;
   width: 100%;
   flex-direction: column;
+}
+
+.welcome{
+  font-size: 40px;
+  color: #0a0a0a;
+  padding: 30px;
+  /*background: -webkit-linear-gradient(#ffffff);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
 }
 
 .home-menu {
@@ -152,6 +60,86 @@ input:after, input:before {
   align-items: center;
   font-family: sans-serif;
 }
+
+html, body {
+  height: 100%;
+}
+
+
+button{
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin: 40px;
+}
+button:after, button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #000;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+button:after {
+  -webkit-transform: translate(3px, 3px);
+  transform: translate(3px, 3px);
+}
+button:before {
+  -webkit-transform: translate(-3px, -3px);
+  transform: translate(-3px, -3px);
+}
+button:hover:after, button:hover:before {
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+input{
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+input:after, input:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #000;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+input:after {
+  -webkit-transform: translate(3px, 3px);
+  transform: translate(3px, 3px);
+}
+input:before {
+  -webkit-transform: translate(-3px, -3px);
+  transform: translate(-3px, -3px);
+}
+input:hover:after, inputn:hover:before {
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+
 .button-container-left {
   display: flex;
   flex-direction: row;
@@ -162,7 +150,6 @@ input:after, input:before {
 .btn {
   margin: 8px;
 }
-
 .table-container {
   font-family: Arial;
   display: flex;
