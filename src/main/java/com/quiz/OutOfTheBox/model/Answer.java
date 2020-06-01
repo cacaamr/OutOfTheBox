@@ -3,7 +3,7 @@ package com.quiz.OutOfTheBox.model;
 public class Answer {
     private String answer;
 
-    public String getAnswer(){
+    public String getAnswer() {
         return answer;
     }
 

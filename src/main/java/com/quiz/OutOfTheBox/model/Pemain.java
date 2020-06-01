@@ -26,7 +26,7 @@ public class Pemain {
     }
 
     public int getSkor() {
-        return skor;
+        return this.skor;
     }
 
     public void setSkor(int skor) {
@@ -34,8 +34,9 @@ public class Pemain {
     }
 
     public void tambahSkor() {
-        skor += 10;
+        this.skor += 10;
     }
+
 
     public int getNyawa() {
         return nyawa;

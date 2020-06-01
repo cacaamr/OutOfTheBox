@@ -6,8 +6,16 @@
   </head>
   <body>
     <div class="container">
+      <h1>
       <span th:text="${poin}"> </span>
-      <span th:text="${jawab}"></span>
+      <span th:text="${skor}"></span>
+        <span th:text="${nyawa}"></span>
+      </h1>
+        <div class="button-container">
+        <a href="/main" class="button1"><button>next question</button></a>
+        <a href="/leaderboard" class="button1"><button>Leaderboard</button></a>
+      </div>
     </div>
+
   </body>
 </html>

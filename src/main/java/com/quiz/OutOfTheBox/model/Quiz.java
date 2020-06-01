@@ -2,13 +2,12 @@ package com.quiz.OutOfTheBox.model;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Quiz {
     private Random randomQuestion;
     public QnA qna;
     int index;
-    ArrayList<String> questarr ;
+    //ArrayList<String> questarr ;
 
     public Quiz() {
         qna = new QnA();
@@ -34,5 +33,10 @@ public class Quiz {
         String[] ans = qna.getListQnA().get(index);
         String answer = ans[1];
         return answer;
+    }
+
+    public String getAnswerbyIndex(int in) {
+        String jawaban = qna.getListQnA().get(in)[1];
+        return jawaban;
     }
 }

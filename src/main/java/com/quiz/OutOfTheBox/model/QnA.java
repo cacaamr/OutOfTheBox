@@ -12,7 +12,6 @@ public class QnA {
     private ArrayList<String[]> listQnA = new ArrayList<>();
 
     public QnA() {
-
         readFileQnA();
     }
 
@@ -33,48 +32,12 @@ public class QnA {
             br = new BufferedReader(new FileReader("src/main/java/com/quiz/OutOfTheBox/model/qna.txt"));
             String txt = br.readLine();
             while (txt != null) {
-                line = txt.split(";");
+                line = txt.strip().split(";");
                 listQnA.add(line);
                 txt = br.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void readFileQuestion() {
-        try {
-            br = new BufferedReader(new FileReader("src/main/java/com/quiz/OutOfTheBox/model/question.txt"));
-            String txt = br.readLine();
-
-            while (txt != null) {
-                listQuestion.add(txt);
-                txt = br.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void readFileAnswer() {
-
-        try {
-            br = new BufferedReader(new FileReader("src/main/java/com/quiz/OutOfTheBox/model/answer.txt"));
-            String txt = br.readLine();
-
-            while (txt != null) {
-                listAnswer.add(txt);
-                txt = br.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public static void main(String[] args) {
-        QnA qna = new QnA();
-        System.out.println(qna.getListQnA());
     }
 }
