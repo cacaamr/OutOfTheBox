@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
     Pemain player;
     QnA qna = new QnA();
+    String pertanyaan;
     String jawaban;
+    int index;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -37,10 +39,10 @@ public class MainController {
 
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
-        String pertanyaan = quiz.getRandomQuestion();
-        int index = quiz.getIndex();
+        pertanyaan = quiz.getRandomQuestion();
+        index = quiz.getIndex();
         model.addAttribute("randomQuestion", pertanyaan);
-        model.addAttribute("jawaban",new Answer());
+        model.addAttribute("jawaban", new Answer());
         model.addAttribute("player", player);
         jawaban = quiz.getAnswerbyIndex(index);
         return "main";
@@ -49,7 +51,7 @@ public class MainController {
     @PostMapping("/main2")
     public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
             Model model) {
-        model.addAttribute("player",player);
+        model.addAttribute("player", player);
         if (!jawaban.equals(answer.getAnswer())) {
             player.kurangiNyawa();
             if (player.getNyawa() <= 0) {
@@ -59,18 +61,16 @@ public class MainController {
 
         } else {
             player.tambahSkor();
-            System.out.println(pemain.getSkor());
             model.addAttribute("poin", "Jawaban anda Benar");
         }
+        model.addAttribute("skor", player.getSkor());
         model.addAttribute("nyawa",player.getNyawa());
-        model.addAttribute("skor",player.getSkor());
 
         return "main2";
     }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
-        model.addAttribute("daftarPemain", Pemain.getDaftarPemain());
         return "leaderboard";
     }
 
