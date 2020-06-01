@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
+    // Pemain user;
+    // String namaCurrentUser;
     QnA qna = new QnA();
     String pertanyaan;
     String jawaban;
@@ -37,12 +39,11 @@ public class MainController {
 
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
-        Quiz newquiz = new Quiz();
         pertanyaan = quiz.getRandomQuestion();
         index = quiz.getIndex();
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
-        jawaban = newquiz.getAnswerbyIndex(index);
+        jawaban = quiz.getAnswerbyIndex(index);
         return "main";
     }
 
@@ -51,7 +52,7 @@ public class MainController {
             Model model) {
         if (!jawaban.equals(answer.getAnswer())) {
             pemain.kurangiNyawa();
-            if (pemain.getNyawa() < 0) {
+            if (pemain.getNyawa() <= 0) {
                 return "gameover";
             }
             model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
@@ -60,12 +61,14 @@ public class MainController {
         } else {
             pemain.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
+            model.addAttribute("skor", pemain.getSkor());
         }
         return "main2";
     }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
+        model.addAttribute("daftarPemain", Pemain.getDaftarPemain());
         return "leaderboard";
     }
 
