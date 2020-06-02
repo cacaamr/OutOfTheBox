@@ -36,6 +36,7 @@ public class Pemain {
         this.skor += 10;
     }
 
+
     public int getNyawa() {
         return this.nyawa;
     }

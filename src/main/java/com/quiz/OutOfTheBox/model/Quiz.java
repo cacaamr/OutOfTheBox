@@ -7,11 +7,11 @@ public class Quiz {
     private Random randomQuestion;
     public QnA qna;
     int index;
-    // ArrayList<String> questarr;
+    //ArrayList<String> questarr ;
 
     public Quiz() {
-        randomQuestion = new Random();
         qna = new QnA();
+        randomQuestion = new Random();
         index = randomQuestion.nextInt(qna.getListQnA().size());
     }
 

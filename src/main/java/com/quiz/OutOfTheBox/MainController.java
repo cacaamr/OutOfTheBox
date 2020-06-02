@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MainController {
-    int index;
-    String jawaban;
-    QnA qna = new QnA();
     Pemain player;
+    QnA qna = new QnA();
+    String pertanyaan;
+    String jawaban;
+    int index;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -38,7 +39,7 @@ public class MainController {
 
     @GetMapping("/main")
     public String Main(@ModelAttribute Quiz quiz, Model model) {
-        String pertanyaan = quiz.getRandomQuestion();
+        pertanyaan = quiz.getRandomQuestion();
         index = quiz.getIndex();
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
@@ -48,19 +49,23 @@ public class MainController {
     }
 
     @PostMapping("/main2")
-    public String menjawab(@ModelAttribute Answer answer, @ModelAttribute Quiz quiz, Model model){
+    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
+            Model model) {
         model.addAttribute("player", player);
-        if (!jawaban.equals(quiz.getAnswer())) {
+        if (!jawaban.equals(answer.getAnswer())) {
             player.kurangiNyawa();
-            if (player.getNyawa() < 0) {
+            if (player.getNyawa() <= 0) {
                 return "gameover";
-            }model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
+            }
+            model.addAttribute("poin", "Jawaban anda salah. Coba lagi");
+
         } else {
             player.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
         }
-        model.addAttribute("nyawa", player.getNyawa());
         model.addAttribute("skor", player.getSkor());
+        model.addAttribute("nyawa",player.getNyawa());
+
         return "main2";
     }
 

@@ -8,6 +8,8 @@ public class Answer {
     }
 
     public void setAnswer(String jawaban) {
+
         answer = jawaban;
+
     }
 }
