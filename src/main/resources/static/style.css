@@ -1,5 +1,3 @@
-
-
 body {
   overflow: hidden;
   background-image: url("image-from-rawpixel-id-2361865-original.jpg");
@@ -12,10 +10,10 @@ body {
   -webkit-box-align: center;
   align-items: center;
   /*background: #FAFAFA;*/
-
+  font-weight: bold;
+  font-family: "Timmana", sans-serif;
+  font-style: italic;
 }
-
-
 
 .container {
   display: flex;
@@ -26,7 +24,7 @@ body {
   flex-direction: column;
 }
 
-.welcome{
+.welcome {
   font-size: 40px;
   color: white;
   /*background: -webkit-linear-gradient(#ffffff);*/
@@ -60,12 +58,12 @@ body {
   font-family: sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
-
-button{
+button {
   padding: 20px 40px;
   background: none;
   border: none;
@@ -75,7 +73,8 @@ button{
   letter-spacing: 3px;
   cursor: pointer;
 }
-button:after, button:before {
+button:after,
+button:before {
   content: "";
   position: absolute;
   top: 0;
@@ -96,12 +95,13 @@ button:before {
   -webkit-transform: translate(-3px, -3px);
   transform: translate(-3px, -3px);
 }
-button:hover:after, button:hover:before {
+button:hover:after,
+button:hover:before {
   -webkit-transform: translate(0);
   transform: translate(0);
 }
 
-input{
+input {
   padding: 20px 40px;
   background: none;
   border: none;
@@ -111,7 +111,8 @@ input{
   letter-spacing: 3px;
   cursor: pointer;
 }
-input:after, input:before {
+input:after,
+input:before {
   content: "";
   position: absolute;
   top: 0;
@@ -132,11 +133,11 @@ input:before {
   -webkit-transform: translate(-3px, -3px);
   transform: translate(-3px, -3px);
 }
-input:hover:after, inputn:hover:before {
+input:hover:after,
+inputn:hover:before {
   -webkit-transform: translate(0);
   transform: translate(0);
 }
-
 
 .button-container-left {
   display: flex;
@@ -157,12 +158,15 @@ input:hover:after, inputn:hover:before {
   flex-direction: column;
 }
 
-table, th, td {
+table,
+th,
+td {
   font-family: Arial;
   border: 1px solid black;
 }
 
-th, td {
+th,
+td {
   font-family: Arial;
   text-align: center;
   min-width: 100px;
