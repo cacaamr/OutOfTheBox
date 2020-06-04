@@ -1,9 +1,11 @@
 package com.quiz.OutOfTheBox;
 
+import java.util.*;
 import com.quiz.OutOfTheBox.model.Answer;
 import com.quiz.OutOfTheBox.model.Pemain;
 import com.quiz.OutOfTheBox.model.QnA;
 import com.quiz.OutOfTheBox.model.Quiz;
+import com.quiz.OutOfTheBox.model.SortByScore;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -62,16 +64,20 @@ public class MainController {
         } else {
             player.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
+            model.addAttribute("skor", pemain.getSkor());
         }
         model.addAttribute("skor", player.getSkor());
-        model.addAttribute("nyawa",player.getNyawa());
+        model.addAttribute("nyawa", player.getNyawa());
+        model.addAttribute("jawaban",jawaban);
 
         return "main2";
     }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
-        model.addAttribute("daftarPemain", player.getDaftarPemain());
+        ArrayList<Pemain> daftarPemain = Pemain.getDaftarPemain();
+        Collections.sort(daftarPemain, new SortByScore());
+        model.addAttribute("daftarPemain", daftarPemain);
         return "leaderboard";
     }
 

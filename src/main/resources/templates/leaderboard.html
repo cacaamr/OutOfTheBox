@@ -5,9 +5,7 @@
     <link rel="stylesheet" th:href="@{style.css}" />
     <style>
       table {
-          margin-bottom: 40px;
-          margin-top: 10px;
-          counter-reset: rowNumber;
+        counter-reset: rowNumber;
       }
       table tr::before {
         counter-increment: rowNumber;
@@ -18,11 +16,10 @@
 
   <body>
     <div class="table-container">
-      <h1>LEADERBOARD</h1>
+      <h2>LEADERBOARD</h2>
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
             <th>Nama</th>
             <th>Score</th>
           </tr>
@@ -39,9 +36,7 @@
           </tr>
         </tbody>
       </table>
-      <div class="button-container">
-        <a href="/" class="button1"><button>Kembali ke halaman utama</button></a>
-      </div>
+      <a href="/" class="button1"><button class="button1">Kembali ke halaman utama</button></a>
     </div>
   </body>
 </html>
