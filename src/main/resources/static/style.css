@@ -1,3 +1,5 @@
+
+
 body {
   overflow: hidden;
   background-image: url("image-from-rawpixel-id-2361865-original.jpg");
@@ -17,6 +19,7 @@ body {
 }
 
 
+
 .container {
   display: flex;
   align-items: center;
@@ -28,8 +31,7 @@ body {
 
 .welcome{
   font-size: 40px;
-  color: #0a0a0a;
-  padding: 30px;
+  color: black;
   /*background: -webkit-linear-gradient(#ffffff);*/
   /*-webkit-background-clip: text;*/
   /*-webkit-text-fill-color: transparent;*/
@@ -75,7 +77,6 @@ button{
   font-weight: bold;
   letter-spacing: 3px;
   cursor: pointer;
-  margin: 40px;
 }
 button:after, button:before {
   content: "";

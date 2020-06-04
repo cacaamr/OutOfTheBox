@@ -5,7 +5,9 @@
     <link rel="stylesheet" th:href="@{style.css}" />
     <style>
       table {
-        counter-reset: rowNumber;
+          margin-bottom: 40px;
+          margin-top: 10px;
+          counter-reset: rowNumber;
       }
       table tr::before {
         counter-increment: rowNumber;
@@ -32,8 +34,8 @@
           </tr>
           <!-- iterasi daftar pemain yang diurutkan berdasarkan score untuk ditampilkan dalam tabel -->
           <tr th:each="pemain : ${daftarPemain}">
-            <td><span th:text="${pemain.getNama()}"></span></td>
-            <td><span th:text="${pemain.getSkor()}"></span></td>
+            <td><span th:text="${pemain.nama}"></span></td>
+            <td><span th:text="${pemain.skor}"></span></td>
           </tr>
         </tbody>
       </table>

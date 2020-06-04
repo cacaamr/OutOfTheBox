@@ -71,6 +71,7 @@ public class MainController {
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
+        model.addAttribute("daftarPemain", player.getDaftarPemain());
         return "leaderboard";
     }
 
