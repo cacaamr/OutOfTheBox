@@ -4,15 +4,15 @@
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
   </head>
-
-
   <body>
     <div class="container">
-      <h1 class="welcome">
-        Selamat datang di Out of The Box Quiz!
+      <h1>
+        <span th:text="${poin}"> </span>
+        <span th:text="${skor}"></span>
+        <span th:text="${nyawa}"></span>
       </h1>
       <div class="button-container">
-        <a href="/form-username" class="button1"><button>Start</button></a>
+        <a href="/main" class="button1"><button>next question</button></a>
         <a href="/leaderboard" class="button1"><button>Leaderboard</button></a>
       </div>
     </div>

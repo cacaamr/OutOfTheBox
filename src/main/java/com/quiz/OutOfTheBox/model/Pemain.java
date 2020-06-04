@@ -2,9 +2,8 @@ package com.quiz.OutOfTheBox.model;
 
 import java.util.ArrayList;
 
-
 public class Pemain {
-    private static ArrayList<Pemain> daftarPemain = new ArrayList<Pemain>();
+    private static ArrayList<Pemain> daftarPemain = new ArrayList<>();
     private String nama;
     private int skor = 0;
     private int nyawa = 5;
@@ -14,20 +13,30 @@ public class Pemain {
         return daftarPemain;
     }
 
+    public static Pemain getPemain(String nama) {
+        Pemain user = new Pemain();
+        for (int i = 0; i < daftarPemain.size(); i++) {
+            if (daftarPemain.get(i).getNama().equals(nama)) {
+                user = daftarPemain.get(i);
+            }
+        }
+        return user;
+    }
+
     public static void addPemain(Pemain pemain) {
         daftarPemain.add(pemain);
     }
-    
+
     public void setNama(String nama) {
         this.nama = nama;
     }
 
     public String getNama() {
-        return nama;
+        return this.nama;
     }
 
     public int getSkor() {
-        return skor;
+        return this.skor;
     }
 
     public void setSkor(int skor) {
@@ -35,8 +44,9 @@ public class Pemain {
     }
 
     public void tambahSkor() {
-        skor += 10;
+        this.skor += 10;
     }
+
 
     public int getNyawa() {
         return nyawa;
