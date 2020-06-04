@@ -7,10 +7,35 @@
   <body>
     <div class="container">
       <h1>
-      <span th:text="${poin}"> </span>
-      <span th:text="${skor}"> </span>
-      <span th:text="${nyawa}"> </span>
-      <a href="/main"> <button class="button1">Selanjutnya</button></a>
+        <span th:text="${poin}"> </span>
+<!--        <span th:text="${skor}"></span>-->
+<!--        <span th:text="${nyawa}"></span>-->
+      </h1>
+      <div class="button-container">
+        <div class="box">
+          <a class="button1" href="#popup1"><button>Lihat Jawaban</button></a>
+        </div>
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <h2>Jawaban</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              <span th:text="${jawaban}"></span>
+            </div>
+          </div>
+        </div>
+         <a href="/main" class="button1"><button>Selanjutnya</button></a>
+      </div>
+      <div>
+        <div class="margin-4">
+          <span>Skor : </span><span class="span-next-line" th:text="${skor}"></span><br>
+        </div>
+        <div class="margin-4">
+          <span>Nyawa : </span><span th:text="${nyawa}"></span>
+        </div>
+      </div>
     </div>
+
+
   </body>
 </html>

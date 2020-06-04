@@ -1,3 +1,4 @@
+  
 package com.quiz.OutOfTheBox;
 
 import java.util.*;
@@ -68,13 +69,16 @@ public class MainController {
         }
         model.addAttribute("skor", player.getSkor());
         model.addAttribute("nyawa", player.getNyawa());
+        model.addAttribute("jawaban",jawaban);
 
         return "main2";
     }
 
     @GetMapping("/leaderboard")
     public String leaderboard(Model model) {
-        model.addAttribute("daftarPemain", Pemain.getDaftarPemain());
+        ArrayList<Pemain> daftarPemain = Pemain.getDaftarPemain();
+        Collections.sort(daftarPemain, new SortByScore());
+        model.addAttribute("daftarPemain", daftarPemain);
         return "leaderboard";
     }
 
