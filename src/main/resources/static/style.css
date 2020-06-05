@@ -16,6 +16,7 @@ body {
   font-family: 'Timmana', sans-serif;
   font-style: italic;
   min-height: 100vh;
+  cursor:  url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
   /*background: #FAFAFA;*/
 
 }
@@ -26,8 +27,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
-  width: 70%;
+  height: 100vh;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -69,16 +70,15 @@ html, body {
   height: 100%;
 }
 
-
 button{
-  padding: 20px 40px;
+  padding: 15px 35px;
   background: none;
   border: none;
   position: relative;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 3px;
-  cursor: pointer;
+  letter-spacing: 1px;
+  cursor:  url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -116,7 +116,7 @@ input{
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 3px;
-  cursor: pointer;
+  cursor:  url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
 }
 input:after, input:before {
   content: "";
@@ -222,7 +222,7 @@ th {
   border: 2px solid #06D85F;
   border-radius: 20px/50px;
   text-decoration: none;
-  cursor: pointer;
+  cursor: url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
   transition: all 0.3s ease-out;
 }
 .button:hover {
