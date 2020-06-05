@@ -161,7 +161,7 @@ inputn:hover:before {
 }
 
 table {
-  overflow-x : auto; 
+  overflow : auto; 
   font-family: "Tahoma", sans-serif;
   border-collapse: collapse;
   background-color: white;
