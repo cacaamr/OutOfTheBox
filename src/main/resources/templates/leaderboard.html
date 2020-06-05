@@ -3,20 +3,11 @@
   <head>
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
-    <!-- <style>
-      table {
-        counter-reset: rowNumber;
-      }
-      table tr::before {
-        counter-increment: rowNumber;
-        content: counter(rowNumber);
-      }
-    </style> -->
   </head>
 
   <body>
     <div class="table-container">
-      <h2>LEADERBOARD</h2>
+      <h1>LEADERBOARD</h1>
       <table>
         <thead>
           <tr>
@@ -38,18 +29,11 @@
         </tbody>
       </table>
       <p></p>
-
-      <a href="/" class="button1"
-        ><button class="button1">Kembali ke halaman utama</button></a
-      >
+      <div class="button-container">
+        <a href="/" class="button1">
+          <button class="button1">Kembali ke halaman utama</button>
+        </a>
+      </div>
     </div>
   </body>
 </html>
-=======
-<head>
-  <title>Out of The Box Quiz</title>
-  <link rel="stylesheet" th:href="@{style.css}" />
-
-  =======
-  <head></head>
-</head>
