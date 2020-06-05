@@ -21,6 +21,12 @@ public class Quiz {
         return question;
     }
 
+    public String getHint() {
+        String [] listHint = qna.getListHint().get(index);
+        String hint = listHint[2];
+        return hint;
+    }
+
     public ArrayList<String[]> getList() {
         return qna.getListQnA();
     }

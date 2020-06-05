@@ -47,6 +47,7 @@ public class MainController {
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
         model.addAttribute("player", player);
+       model.addAttribute("hint", quiz.getHint());
         jawaban = quiz.getAnswerbyIndex(index);
         return "main";
     }
