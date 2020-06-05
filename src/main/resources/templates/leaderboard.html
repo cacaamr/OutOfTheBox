@@ -3,7 +3,7 @@
   <head>
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
-    <style>
+    <!-- <style>
       table {
         counter-reset: rowNumber;
       }
@@ -11,34 +11,37 @@
         counter-increment: rowNumber;
         content: counter(rowNumber);
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
     <div class="table-container">
-      <a href="/" class="button1"
-        ><button class="button1">Kembali ke halaman utama</button></a
-      >
       <h2>LEADERBOARD</h2>
       <table>
         <thead>
           <tr>
+            <th>Rank</th>
             <th>Nama</th>
-            <th>Score</th>
+            <th>Skor</th>
           </tr>
         </thead>
         <tbody>
-          <!-- if block untuk meng-handle jika belum ada pemain -->
           <tr th:if="${daftarPemain.empty}">
             <td colspan="3">Belum ada pemain</td>
           </tr>
-          <!-- iterasi daftar pemain yang diurutkan berdasarkan score untuk ditampilkan dalam tabel -->
-          <tr th:each="pemain : ${daftarPemain}">
-            <td><span th:text="${pemain.nama}"></span></td>
-            <td><span th:text="${pemain.skor}"></span></td>
+
+          <tr th:each="pemain,pemStat : ${daftarPemain}">
+            <td data-th="Rank"><span th:text="${pemStat.count}"></span></td>
+            <td data-th="Nama"><span th:text="${pemain.nama}"></span></td>
+            <td data-th="Skor"><span th:text="${pemain.skor}"></span></td>
           </tr>
         </tbody>
       </table>
+      <p></p>
+
+      <a href="/" class="button1"
+        ><button class="button1">Kembali ke halaman utama</button></a
+      >
     </div>
   </body>
 </html>
