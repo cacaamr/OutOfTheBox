@@ -1,38 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>Out of The Box Quiz</title>
-  <link rel="stylesheet" th:href="@{style.css}" />
-</head>
-<body>
-<div class="container">
-  <h1 th:text="${quiz.getRandomQuestion()}"></h1>
-  <form
-          action="#"
-          th:action="@{/main2}"
-          th:object="${jawaban}"
-          method="post"
-  >
-    <div class="field">
-      Jawab : <input type="text" required th:field="*{answer}" /></div>
-    <div class="button-container">
-      <a href="/main2" class="button1"><button>Submit</button></a>
-    </div>
-  </form>
-  <div class="box">
-    <a class="button1" href="#popup1"><button>Lihat Hint</button></a>
-  </div>
+  <head>
+    <title>Out of The Box Quiz</title>
+    <link rel="stylesheet" th:href="@{style.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 th:text="${quiz.getRandomQuestion()}"></h1>
+      <form
+        action="#"
+        th:action="@{/main2}"
+        th:object="${jawaban}"
+        method="post"
+      >
+        <div class="field">
+          Jawab : <input type="text" required th:field="*{answer}" />
+        </div>
+        <div class="button-container">
+          <a href="/main2" class="button1"><button>Submit</button></a>
+        </div>
+      </form>
+      <div class="box">
+        <a class="button1" href="#popup1"><button>Lihat Hint</button></a>
+      </div>
 
-  <div id="popup1" class="overlay">
-    <div class="popup">
-      <h2>Hint</h2>
-      <a class="close" href="#">&times;</a>
-      <div class="content">
-        <span th:text="${hint}"></span>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>Hint</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <span th:text="${hint}"></span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</body>
+  </body>
 </html>
