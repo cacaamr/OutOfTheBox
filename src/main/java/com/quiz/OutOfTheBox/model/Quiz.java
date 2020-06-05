@@ -6,24 +6,37 @@ import java.util.Random;
 public class Quiz {
     private Random randomQuestion;
     public QnA qna;
-    
-    public Quiz() {
-        randomQuestion = new Random();
-        qna = new QnA();
+    int index;
+    //ArrayList<String> questarr ;
 
+    public Quiz() {
+        qna = new QnA();
+        randomQuestion = new Random();
+        index = randomQuestion.nextInt(qna.getListQnA().size());
     }
 
     public String getRandomQuestion() {
-        int index = randomQuestion.nextInt(qna.getListQuestion().size());
-        String quest = qna.getListQuestion().get(index);
-        return quest;
+        String[] que = qna.getListQnA().get(index);
+        String question = que[0];
+        return question;
     }
 
-    public static void main(String[] args) {
-        Quiz quiz = new Quiz();
-        System.out.println(quiz.getRandomQuestion());
-        
-
+    public ArrayList<String[]> getList() {
+        return qna.getListQnA();
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    public String getAnswer() {
+        String[] ans = qna.getListQnA().get(index);
+        String answer = ans[1];
+        return answer;
+    }
+
+    public String getAnswerbyIndex(int in) {
+        String jawaban = qna.getListQnA().get(in)[1];
+        return jawaban;
+    }
 }

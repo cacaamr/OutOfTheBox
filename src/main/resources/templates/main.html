@@ -4,23 +4,23 @@
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
   </head>
-
-  <body>
+  <body> 
     <div class="container">
-      <h1>Masukkan nama</h1>
+      <h1 th:text="${quiz.getRandomQuestion()}"></h1>
       <form
         action="#"
-        th:action="@{/hasil-form-username}"
-        th:object="${pemain}"
+        th:action="@{/main2}"
+        th:object="${jawaban}"
         method="post"
       >
         <div class="field">
-          Nama: <input type="text" required th:field="*{nama}" />
-        </div>
+          Jawab : <input type="text" required th:field="*{answer}" /></div>
         <div class="button-container">
-          <input type="submit" value="Submit" />
+          <input type="submit" value="submit" />
         </div>
       </form>
     </div>
+<!--    <a href="/main2"> <button class="button1">Jawab</button></a>-->
+</th:block>
   </body>
 </html>
