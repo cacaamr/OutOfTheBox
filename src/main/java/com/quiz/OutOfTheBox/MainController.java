@@ -68,6 +68,7 @@ public class MainController {
         }
         model.addAttribute("skor", player.getSkor());
         model.addAttribute("nyawa", player.getNyawa());
+        model.addAttribute("jawaban",jawaban);
 
         return "main2";
     }
