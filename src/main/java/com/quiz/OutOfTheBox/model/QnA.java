@@ -16,14 +16,6 @@ public class QnA {
         readFileQnA();
     }
 
-    public ArrayList<String> getListAnswer() {
-        return listAnswer;
-    }
-
-    public ArrayList<String> getListQuestion() {
-        return listQuestion;
-    }
-
     public ArrayList<String[]> getListQnA() {
         return listQnA;
     }
@@ -31,7 +23,7 @@ public class QnA {
     public ArrayList<String[]> getListHint() {
         return listHint;
     }
-    
+
     public void readFileQnA() {
         try {
             br = new BufferedReader(new FileReader("src/main/java/com/quiz/OutOfTheBox/model/qna.txt"));
