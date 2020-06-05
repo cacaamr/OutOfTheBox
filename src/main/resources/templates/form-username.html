@@ -14,6 +14,7 @@
         th:action="@{/hasil-form-username}"
         th:object="${pemain}"
         method="post"
+        autocomplete="off"
       >
         <div class="field">
           Nama: <input type="text" required th:field="*{nama}" />
