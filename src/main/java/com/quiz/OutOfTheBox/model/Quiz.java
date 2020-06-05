@@ -7,7 +7,7 @@ public class Quiz {
     private Random randomQuestion;
     public QnA qna;
     int index;
-    //ArrayList<String> questarr ;
+    // ArrayList<String> questarr ;
 
     public Quiz() {
         qna = new QnA();
@@ -38,5 +38,10 @@ public class Quiz {
     public String getAnswerbyIndex(int in) {
         String jawaban = qna.getListQnA().get(in)[1];
         return jawaban;
+    }
+
+    public String getHintbyIndex(int in) {
+        String hint = qna.getListQnA().get(in)[2];
+        return hint;
     }
 }

@@ -10,22 +10,19 @@ public class QnA {
     private ArrayList<String> listAnswer = new ArrayList<String>();
     private String[] line;
     private ArrayList<String[]> listQnA = new ArrayList<>();
+    private ArrayList<String[]> listHint = new ArrayList<>();
 
     public QnA() {
         readFileQnA();
     }
     
 
-    public ArrayList<String> getListAnswer() {
-        return listAnswer;
-    }
-
-    public ArrayList<String> getListQuestion() {
-        return listQuestion;
-    }
-
     public ArrayList<String[]> getListQnA() {
         return listQnA;
+    }
+
+    public ArrayList<String[]> getListHint() {
+        return listHint;
     }
 
     public void readFileQnA() {
