@@ -1,3 +1,4 @@
+  
 package com.quiz.OutOfTheBox;
 
 import java.util.*;
@@ -19,7 +20,6 @@ public class MainController {
     QnA qna = new QnA();
     String pertanyaan;
     String jawaban;
-    String hint;
     int index;
 
     @GetMapping("/")
@@ -44,11 +44,10 @@ public class MainController {
     public String Main(@ModelAttribute Quiz quiz, Model model) {
         pertanyaan = quiz.getRandomQuestion();
         index = quiz.getIndex();
-        hint = quiz.getHintbyIndex(index);
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
         model.addAttribute("player", player);
-        model.addAttribute("hint", hint);
+        model.addAttribute("hint", quiz.getHint());
         jawaban = quiz.getAnswerbyIndex(index);
         return "main";
     }
@@ -67,10 +66,11 @@ public class MainController {
         } else {
             player.tambahSkor();
             model.addAttribute("poin", "Jawaban anda Benar");
+            model.addAttribute("skor", pemain.getSkor());
         }
         model.addAttribute("skor", player.getSkor());
         model.addAttribute("nyawa", player.getNyawa());
-        model.addAttribute("jawaban", jawaban);
+        model.addAttribute("jawaban",jawaban);
 
         return "main2";
     }

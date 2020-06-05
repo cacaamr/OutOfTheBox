@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
+
 body {
+  display: flex;
   overflow: hidden;
   background-image: url("image-from-rawpixel-id-2361865-original.jpg");
   background-size: cover;
@@ -10,12 +13,10 @@ body {
   -webkit-box-align: center;
   align-items: center;
   font-weight: bold;
-  font-family: "Timmana", sans-serif;
+  font-family: "Tahoma", sans-serif;
   font-style: italic;
-  /*background: #FAFAFA;*/
-  font-weight: bold;
-  font-family: "Timmana", sans-serif;
-  font-style: italic;
+  min-height: 100vh;
+  cursor: url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
 }
 
 .container {
@@ -29,7 +30,7 @@ body {
 
 .welcome {
   font-size: 40px;
-  color: black;
+  color: rgb(68, 66, 66);
   /*background: -webkit-linear-gradient(#ffffff);*/
   /*-webkit-background-clip: text;*/
   /*-webkit-text-fill-color: transparent;*/
@@ -45,7 +46,7 @@ body {
 }
 
 .field {
-  margin-bottom: 12px;
+  margin-bottom: 50px;
 }
 
 .radio-field {
@@ -75,6 +76,7 @@ button {
   font-weight: bold;
   letter-spacing: 1px;
   cursor: url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 button:after,
@@ -112,9 +114,8 @@ input {
   position: relative;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 3px;
-  cursor: url(http://cur.cursors-4u.net/cursors/cur-2/cur197.ani),
-    url(http://cur.cursors-4u.net/cursors/cur-2/cur197.png), auto !important;
+  letter-spacing: 20px;
+  cursor: url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
 }
 input:after,
 input:before {
@@ -155,26 +156,51 @@ inputn:hover:before {
   margin: 8px;
 }
 .table-container {
-  font-family: Arial;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
+  font-family: "Tahoma", sans-serif;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*!*width: 100%;*!*/
+  /*flex-direction: column;*/
+
+  border-collapse: collapse;
+  /*background-color: white;*/
+  overflow: hidden;
+  width: 500px;
+  border-radius: 10px;
 }
 
-table,
-th,
-td {
-  font-family: Arial;
-  border: 1px solid black;
+table {
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  background-color: white;
+  overflow: hidden;
+  width: 500px;
+  border-radius: 10px;
+
+  /*font-family: 'Timana',sans-serif;*/
+  /*font-size: 12px;*/
+  /*padding: 10px;*/
+  /*border: 1px solid black;*/
 }
 
 th,
 td {
-  font-family: Arial;
+  font-family: "Motnserrat", sans-serif;
   text-align: center;
-  min-width: 100px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+/*th, td {*/
+/*  font-family: 'Timana',sans-serif;*/
+/*  text-align: center;*/
+/*  min-width: 100px;*/
+/*}*/
+
+th {
+  background-color: #775bea;
+  color: white;
 }
 
 /*.box {*/
@@ -196,8 +222,7 @@ td {
   border: 2px solid #06d85f;
   border-radius: 20px/50px;
   text-decoration: none;
-  cursor: url(http://cur.cursors-4u.net/cursors/cur-2/cur197.ani),
-    url(http://cur.cursors-4u.net/cursors/cur-2/cur197.png), auto !important;
+  cursor: url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
   transition: all 0.3s ease-out;
 }
 .button:hover {
@@ -265,4 +290,8 @@ td {
 .margin-4 {
   margin: 4px;
   font-size: 17px;
+}
+
+h1 {
+  text-align: center;
 }

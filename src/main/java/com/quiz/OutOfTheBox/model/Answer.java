@@ -1,4 +1,4 @@
-package com.quiz.OutOfTheBox.model;
+  package com.quiz.OutOfTheBox.model;
 
 public class Answer {
     private String answer;

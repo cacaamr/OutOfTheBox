@@ -5,9 +5,8 @@ import java.util.ArrayList;
 public class Pemain {
     private static ArrayList<Pemain> daftarPemain = new ArrayList<>();
     private String nama;
-    private int skor = 0;
+    private int skor = 0  ;
     private int nyawa = 5;
-    protected boolean gameOver = false;
 
     public static ArrayList<Pemain> getDaftarPemain() {
         return daftarPemain;
@@ -49,14 +48,15 @@ public class Pemain {
 
 
     public int getNyawa() {
-        return nyawa;
+        return this.nyawa;
     }
 
     public void kurangiNyawa() {
-        nyawa--;
+        this.nyawa -= 1;
     }
 
     public void setNyawa(int nyawa) {
         this.nyawa = nyawa;
     }
+
 }
