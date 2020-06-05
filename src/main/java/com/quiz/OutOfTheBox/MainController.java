@@ -19,6 +19,7 @@ public class MainController {
     QnA qna = new QnA();
     String pertanyaan;
     String jawaban;
+    String hint;
     int index;
 
     @GetMapping("/")
@@ -43,15 +44,18 @@ public class MainController {
     public String Main(@ModelAttribute Quiz quiz, Model model) {
         pertanyaan = quiz.getRandomQuestion();
         index = quiz.getIndex();
+        hint = quiz.getHintbyIndex(index);
         model.addAttribute("randomQuestion", pertanyaan);
         model.addAttribute("jawaban", new Answer());
         model.addAttribute("player", player);
+        model.addAttribute("hint", hint);
         jawaban = quiz.getAnswerbyIndex(index);
         return "main";
     }
 
     @PostMapping("/main2")
-    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz, Model model) {
+    public String menjawab(@ModelAttribute Pemain pemain, @ModelAttribute Answer answer, @ModelAttribute Quiz quiz,
+            Model model) {
         model.addAttribute("player", player);
         if (!jawaban.equals(answer.getAnswer())) {
             player.kurangiNyawa();
@@ -66,6 +70,7 @@ public class MainController {
         }
         model.addAttribute("skor", player.getSkor());
         model.addAttribute("nyawa", player.getNyawa());
+        model.addAttribute("jawaban", jawaban);
 
         return "main2";
     }

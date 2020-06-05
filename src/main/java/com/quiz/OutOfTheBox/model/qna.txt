@@ -34,8 +34,8 @@ Siapa presenter yang suka bagi-bagi kuota?;jeremi tetring;j _ _ _ _ _   t _ t _ 
 Kopi apa yang bikin badan lelah?;nescapek;n _ _ _ _ _ e _
 Game apa yang paling ditakutin?;gamepa bumi;g _ _ _ _ _    b _ _ _
 Siapa artis yang hobi tidur?;ucok bobo;u _ _ _  b _ _ _
-Hewan apa yang bisa buat mahluk hidup meninggal?;cicak napas
-Guru apa yang udah ga gemuk?;gurusan
+Hewan apa yang bisa buat makhluk hidup meninggal?;cicak napas;c _ c _ _ n _ _ _ _
+Guru apa yang udah ga gemuk?;gurusan;g _ _ _ s _ _ _ 
 Ikan apa yang menjual banyak buku?;guramedia;g _ _ _ _ _ d _ _ 
 Siapa penyanyi yang moodyan?;moody ayunda;m _ _ _ y    a _ _ _ _ a
 Pocong apa yang paling disukai oleh ibu-ibu?;pocongan harga;p _ _ _ _ g _ n   h _ _ _ _
