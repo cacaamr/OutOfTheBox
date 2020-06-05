@@ -13,15 +13,12 @@ body {
   -webkit-box-align: center;
   align-items: center;
   font-weight: bold;
-  font-family: 'Timmana', sans-serif;
+  font-family: 'Tahoma', sans-serif;
   font-style: italic;
   min-height: 100vh;
   cursor:  url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
-  /*background: #FAFAFA;*/
 
 }
-
-
 
 .container {
   display: flex;
@@ -35,9 +32,6 @@ body {
 .welcome{
   font-size: 40px;
   color: black;
-  /*background: -webkit-linear-gradient(#ffffff);*/
-  /*-webkit-background-clip: text;*/
-  /*-webkit-text-fill-color: transparent;*/
 }
 
 .home-menu {
@@ -80,7 +74,7 @@ button{
   letter-spacing: 1px;
   cursor:  url(http://ani.cursors-4u.net/cursors/cur-12/cur1080.cur), auto !important;
   margin-top: 20px;
-  margin-bottom: 30px;
+  /*margin-bottom: 20px;*/
 }
 button:after, button:before {
   content: "";
@@ -109,7 +103,7 @@ button:hover:after, button:hover:before {
 }
 
 input{
-  padding: 20px 40px;
+  padding: 15px 30px;
   background: none;
   border: none;
   position: relative;
@@ -156,64 +150,33 @@ input:hover:after, inputn:hover:before {
   margin: 8px;
 }
 .table-container {
-  font-family: 'Timmana',sans-serif;
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*justify-content: center;*/
-  /*!*width: 100%;*!*/
-  /*flex-direction: column;*/
-
+  font-family: 'Tahoma',sans-serif;
   border-collapse: collapse;
-  /*background-color: white;*/
   overflow: hidden;
   width: 500px;
   border-radius: 10px;
 }
 
 table {
-  font-family: 'Timmana',sans-serif;
+  font-family: 'Tahoma',sans-serif;
   border-collapse: collapse;
   background-color: white;
   overflow: hidden;
   width: 500px;
   border-radius: 10px;
-
-  /*font-family: 'Timana',sans-serif;*/
-  /*font-size: 12px;*/
-  /*padding: 10px;*/
-  /*border: 1px solid black;*/
 }
 
 th,td{
-  font-family:'Motnserrat',sans-serif;
+  font-family:'Tahoma',sans-serif;
   text-align: center;
   font-size: 12px;
   padding: 10px;
 }
 
-/*th, td {*/
-/*  font-family: 'Timana',sans-serif;*/
-/*  text-align: center;*/
-/*  min-width: 100px;*/
-/*}*/
-
 th {
   background-color: #775bea;
   color: white;
 }
-
-/*.box {*/
-/*  width: 40%;*/
-/*  margin: 0 auto;*/
-/*  background: rgba(255,255,255,0.2);*/
-/*  padding: 10px;*/
-/*  border: 2px solid #fff;*/
-/*  border-radius: 20px/50px;*/
-/*  background-clip: padding-box;*/
-/*  text-align: center;*/
-
-/*}*/
-
 
 .button-popup {
   font-size: 1em;
@@ -290,9 +253,11 @@ th {
 .margin-4 {
   margin: 4px;
   font-size: 17px;
+  padding-top: 20px;
 }
 
 h1{
   text-align: center;
+  padding-top: 60px;
 }
 
