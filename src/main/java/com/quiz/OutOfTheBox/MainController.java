@@ -1,4 +1,3 @@
-  
 package com.quiz.OutOfTheBox;
 
 import java.util.*;
@@ -7,13 +6,13 @@ import com.quiz.OutOfTheBox.model.Pemain;
 import com.quiz.OutOfTheBox.model.QnA;
 import com.quiz.OutOfTheBox.model.Quiz;
 import com.quiz.OutOfTheBox.model.SortByScore;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+// class MainController untuk menghubungkan file html dengan file java
 @Controller
 public class MainController {
     Pemain player;
@@ -48,7 +47,7 @@ public class MainController {
         model.addAttribute("jawaban", new Answer());
         model.addAttribute("player", player);
         model.addAttribute("hint", quiz.getHint());
-        jawaban = quiz.getAnswerbyIndex(index);
+        jawaban = quiz.getAnswer();
         return "main";
     }
 

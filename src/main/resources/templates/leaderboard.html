@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
   <head>
     <title>Out of The Box Quiz</title>
     <link rel="stylesheet" th:href="@{style.css}" />
@@ -50,49 +49,7 @@
 <head>
   <title>Out of The Box Quiz</title>
   <link rel="stylesheet" th:href="@{style.css}" />
-  <!-- <style>
-    table {
-      counter-reset: rowNumber;
-    }
-    table tr::before {
-      counter-increment: rowNumber;
-      content: counter(rowNumber);
-    }
-  </style> -->
+
+  =======
+  <head></head>
 </head>
-
-<body>
-<div class="table-container">
-  <h1>LEADERBOARD</h1>
-  <table>
-    <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Nama</th>
-      <th>Skor</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:if="${daftarPemain.empty}">
-      <td colspan="3">Belum ada pemain</td>
-    </tr>
-
-    <tr th:each="pemain,pemStat : ${daftarPemain}">
-      <td data-th="Rank"><span th:text="${pemStat.count}"></span></td>
-      <td data-th="Nama"><span th:text="${pemain.nama}"></span></td>
-      <td data-th="Skor"><span th:text="${pemain.skor}"></span></td>
-    </tr>
-    </tbody>
-  </table>
-  <p></p>
-  <div class="button-container">
-    <a href="/" class="button1">
-      <button class="button1">Kembali ke halaman utama</button>
-    </a>
-  </div>
-
-
-</div>
-</body>
-</html>
->>>>>>> 2369451de4b9158d0406730c5178ab33c88fc428
